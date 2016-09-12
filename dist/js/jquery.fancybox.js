@@ -1719,7 +1719,7 @@
 
 			parent = F.coming ? F.coming.parent : opts.parent;
 
-			this.overlay = $('<div class="fancybox-overlay"></div>').appendTo( parent && parent.length ? parent : 'body' );
+			this.overlay = $('<div class="fancybox-overlay"><div class="fancybox-backdrop"></div></div>').appendTo( parent && parent.length ? parent : 'body' );
 			this.fixed   = false;
 
 			if (opts.fixed && F.defaults.fixed) {
@@ -1749,7 +1749,7 @@
 
 			if (opts.closeClick) {
 				this.overlay.bind('click.overlay', function(e) {
-					if ($(e.target).hasClass('fancybox-overlay')) {
+					if ($(e.target).hasClass('fancybox-backdrop')) {
 						if (F.isActive) {
 							F.close();
 						} else {

@@ -222,7 +222,7 @@ module.exports = function(jQuery) {
         helpers: {},
 
         /*
-         *	Static methods
+         *  Static methods
          */
 
         open: function(group, opts) {
@@ -1507,7 +1507,7 @@ module.exports = function(jQuery) {
     });
 
     /*
-     *	Default transitions
+     *  Default transitions
      */
 
     F.transitions = {
@@ -1700,7 +1700,7 @@ module.exports = function(jQuery) {
     };
 
     /*
-     *	Overlay helper
+     *  Overlay helper
      */
 
     F.helpers.overlay = {
@@ -1729,7 +1729,7 @@ module.exports = function(jQuery) {
 
             parent = F.coming ? F.coming.parent : opts.parent;
 
-            this.overlay = jQuery('<div class="fancybox-overlay"></div>').appendTo(parent && parent.length ? parent : 'body');
+            this.overlay = jQuery('<div class="fancybox-overlay"><div class="fancybox-backdrop"></div></div>').appendTo(parent && parent.length ? parent : 'body');
             this.fixed = false;
 
             if (opts.fixed && F.defaults.fixed) {
@@ -1759,7 +1759,7 @@ module.exports = function(jQuery) {
 
             if (opts.closeClick) {
                 this.overlay.bind('click.overlay', function(e) {
-                    if (jQuery(e.target).hasClass('fancybox-overlay')) {
+                    if (jQuery(e.target).hasClass('fancybox-backdrop')) {
                         if (F.isActive) {
                             F.close();
                         } else {
@@ -1873,7 +1873,7 @@ module.exports = function(jQuery) {
     };
 
     /*
-     *	Title helper
+     *  Title helper
      */
 
     F.helpers.title = {
